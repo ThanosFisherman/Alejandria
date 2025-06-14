@@ -35,7 +35,7 @@ public abstract class Module<D extends ModuleDrawable> extends ShowcaseLogicHand
     public void update(float delta) {
     }
 
-    public final void exitModule() {
+    public void exitModule() {
         drawable = null;
         input.removeInputHandler(this);
         exit();

@@ -1,6 +1,7 @@
 package com.epicness.alejandria.showcase.assets;
 
 import com.badlogic.gdx.assets.AssetDescriptor;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
@@ -15,6 +16,8 @@ public class ShowcaseAssetPaths {
     public static final AssetDescriptor<Sprite[]> STICKMANRUNFRAMES_ANIMATION;
 
     public static final AssetDescriptor<Sound> BALLBEEP_SOUND;
+
+    public static final AssetDescriptor<Music> BALLBEEP_PADS_MUSIC;
 
     public static final AssetDescriptor<Sound> LOUDTHUNDER_SOUND;
 
@@ -71,6 +74,7 @@ public class ShowcaseAssetPaths {
         ASSETS.add(STICKMANRUN_SPRITE = new AssetDescriptor<>("alejandria/showcase/animations/stickmanRun.png", Sprite.class));
         ASSETS.add(STICKMANRUNFRAMES_ANIMATION = new AssetDescriptor<>("alejandria/showcase/animations/stickmanRunFrames.anim", Sprite[].class));
         ASSETS.add(BALLBEEP_SOUND = new AssetDescriptor<>("alejandria/showcase/audios/ballBeep.sogg", Sound.class));
+        ASSETS.add(BALLBEEP_PADS_MUSIC = new AssetDescriptor<>("alejandria/showcase/audios/PadsEMaj.ogg", Music.class));
         ASSETS.add(LOUDTHUNDER_SOUND = new AssetDescriptor<>("alejandria/showcase/audios/loudThunder.sogg", Sound.class));
         ASSETS.add(GUN_SPRITE = new AssetDescriptor<>("alejandria/showcase/images/bullets/gun.png", Sprite.class));
         ASSETS.add(ARROW_SPRITE = new AssetDescriptor<>("alejandria/showcase/images/buttons/arrow.png", Sprite.class));

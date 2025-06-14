@@ -2,6 +2,8 @@ package com.epicness.alejandria.showcase.assets;
 
 import static com.epicness.alejandria.showcase.assets.ShowcaseAssetPaths.*;
 
+import com.badlogic.gdx.Audio;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
@@ -13,6 +15,8 @@ public class ShowcaseAssets extends Assets {
     private Sprite[] stickmanRunFrames;
 
     private Sound ballBeep;
+
+    private Music pads;
 
     private Sound loudThunder;
 
@@ -98,6 +102,7 @@ public class ShowcaseAssets extends Assets {
         raymarching = get(RAYMARCHING_SHADER_PROGRAM);
         shake = get(SHAKE_SHADER_PROGRAM);
         vignette = get(VIGNETTE_SHADER_PROGRAM);
+        pads = get(BALLBEEP_PADS_MUSIC);
     }
 
     public Sprite getStickmanRun() {
@@ -110,6 +115,10 @@ public class ShowcaseAssets extends Assets {
 
     public Sound getBallBeep() {
         return ballBeep;
+    }
+
+    public Music getPads() {
+        return pads;
     }
 
     public Sound getLoudThunder() {

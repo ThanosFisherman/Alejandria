@@ -3,6 +3,7 @@ package com.epicness.alejandria.showcase.modules.fun;
 import static com.epicness.alejandria.showcase.constants.FunConstants.BALLS;
 import static com.epicness.alejandria.showcase.constants.FunConstants.SPACING;
 import static com.epicness.alejandria.showcase.constants.FunConstants.VOLUME;
+import static com.epicness.alejandria.showcase.constants.MusicIntervals.MAJOR_PENTATONIC_SCALE;
 import static com.epicness.fundamentals.constants.SharedConstants.VIEWPORT_HALF_HEIGHT;
 import static com.epicness.fundamentals.constants.SharedConstants.VIEWPORT_WIDTH;
 
@@ -25,9 +26,13 @@ public class BeepingBalls extends Module<BeepingBallsDrawable> {
             ball.startingX = 100f + i * SPACING;
             ball.startingY = VIEWPORT_HALF_HEIGHT - i * SPACING;
             ball.finalX = VIEWPORT_WIDTH - 100f - i * SPACING;
-            ball.pitch = MathUtils.map(0, BALLS - 1, 1f, 0.5f, i);
+            final float[] notes = MAJOR_PENTATONIC_SCALE;
+            final int index = i % notes.length;
+            ball.pitch = notes[index];
             ball.setOriginBasedPosition(ball.startingX, ball.startingY);
         }
+        assets.getPads().setLooping(true);
+        assets.getPads().play();
         return drawable;
     }
 
@@ -58,5 +63,11 @@ public class BeepingBalls extends Module<BeepingBallsDrawable> {
             y += ball.startingY;
             balls[i].setOriginBasedPosition(x, y);
         }
+    }
+
+    @Override
+    public void exitModule() {
+        super.exitModule();
+        assets.getPads().stop();
     }
 }
